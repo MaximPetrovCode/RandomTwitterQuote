@@ -5,7 +5,8 @@ $(document).ready(function () {
     getQuote();
     $("#new-quote").on('click', getQuote)
 
-
+    $("#twitter-quote").on('click', postOnTwitter);
+    $("#tumbler-quote").on('click', postOnTumblr);
 });
 function getQuote() {
     $.ajax({
@@ -25,10 +26,10 @@ function getQuote() {
     $("html body").animate({
         backgroundColor: colors[index],
         color: colors[index]
-      }, 1000);
-      $(".button").animate({
+    }, 1000);
+    $(".button").animate({
         backgroundColor: colors[index]
-      }, 1000);
+    }, 1000);
 
 
     $('.quote-text').animate({
@@ -46,7 +47,32 @@ function getQuote() {
         $(this).animate({
             opacity: 1
         }, 500);
-        $('#author').html('-'+author);
+        $('#author').html('-' + author);
     });
 
+}
+var name = window.location.hostname;
+function postOnTwitter() {
+    if (inIframe) {
+        openURL('https://twitter.com/intent/tweet?hashtags=window.location.hostname&related='+ window.location.hostname +'&text=' + encodeURIComponent(quote + '" ' + author));
+    }
+}
+
+function postOnTumblr() {
+    if (inIframe) {
+        openURL('https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,'+ window.location.hostname +'&caption=' + encodeURIComponent(author) + '&content=' + encodeURIComponent(quote) + '&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button');
+    }
+}
+
+function inIframe() {
+    try {
+        return window.self !== window.top;
+    }
+    catch (e) {
+        return true;
+    }
+}
+
+function openURL(url){
+  window.open(url, 'Share', 'width=550, height=400, toolbar=0, scrollbars=1 ,location=0 ,statusbar=0,menubar=0, resizable=0');
 }
