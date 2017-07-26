@@ -54,13 +54,13 @@ function getQuote() {
 
 function postOnTwitter() {
     if (inIframe) {
-        openURL('https://twitter.com/intent/tweet?hashtags=quotes&related=getQuotes&text=' + encodeURIComponent(quote + '" ' + author));
+        openURL('https://twitter.com/intent/tweet?hashtags=quotes&related=getQuotes&text='+ encodeURIComponent(quote + '" ' + author));
     }
 }
 
 function postOnTumblr() {
     if (inIframe) {
-        openURL('https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes&caption=' + encodeURIComponent(author) + '&content=' + encodeURIComponent(quote) + '&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button');
+        openURL('https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes&caption='+ encodeURIComponent(author) + '&content=' + encodeURIComponent(quote) + '&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button');
     }
 }
 
