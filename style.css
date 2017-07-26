@@ -1,0 +1,72 @@
+body{
+    background-color: black;
+    color: white;
+    margin: -1px;
+    font-family: monospace;
+}
+
+.quote{
+    display: table;
+    margin: 0 auto;
+}
+
+.quote-box{
+    background-color: white;
+    color: black;
+    width: 450px;
+    height: 300px;
+    text-align: center;
+    border-radius: 15px;
+    display: table;
+    margin: 250px auto;
+}
+
+.quote-text{
+    /*background-color: greenyellow;*/
+    margin: 100px 20px 10px 20px;
+}
+.quote-author{
+    /*background-color: red;*/
+    margin: auto 30px auto 300px;
+    font-size: 2em;
+}
+
+.quote-buttons{
+    /*background-color: blue;*/
+    margin-bottom: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: block;
+}
+
+.button
+{
+    height:16px;
+    border:none;
+    border-radius:3px;
+    color:#fff;
+    background-color: black;
+    outline:none;
+    font-size:1em;
+    padding: 6px 14px 10px 14px;
+    margin-top:20px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    opacity:1;
+    cursor:pointer;
+}
+
+#twitter-quote,#tumbler-quote{
+    float: left;
+}
+
+#new-quote{
+    float: right;
+    font-size: 18px;
+}
+
+footer{
+    font-family: monospace;
+    color: white;
+    text-align: center;
+}
